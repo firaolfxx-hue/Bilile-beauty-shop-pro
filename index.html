@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="styles/style.css"/>
+  <title>Hello, World!</title>
+</head>
+<body>
+  <h1>
+    Hello, World!
+  </h1>
+</body>
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalid Coffee | Meticulously Sourced. Artfully Roasted.</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111111;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="text-white selection:bg-[#D4AF37] selection:text-black">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-40 bg-[#111111]/80 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" onclick="navigatePage('home')" class="font-serif text-2xl font-semibold tracking-wide text-white">
+                KALID<span class="text-[#D4AF37]">.</span>COFFEE
+            </a>
+            <!-- Navigation Actions -->
+            <div class="flex items-center space-x-6">
+                <a href="#" onclick="navigatePage('home')" class="text-xs tracking-wider uppercase text-gray-400 hover:text-[#D4AF37] transition duration-300">Home</a>
+                <a href="#" onclick="navigatePage('about')" class="text-xs tracking-wider uppercase text-gray-400 hover:text-[#D4AF37] transition duration-300">About Us</a>
+                
+                <!-- Cart Trigger with Dynamic Badge -->
+                <button onclick="toggleCart(true)" class="relative text-xs tracking-wider uppercase text-gray-400 hover:text-[#D4AF37] flex items-center gap-2 focus:outline-none">
+                    <span>Cart</span>
+                    <span id="cart-count-badge" class="bg-[#D4AF37] text-black font-bold px-2 py-0.5 text-[10px] rounded-full hidden">0</span>
+                </button>
+                
+                <a href="#" onclick="navigatePage('order')" class="text-xs tracking-wider uppercase text-gray-400 hover:text-[#D4AF37] border border-white/10 hover:border-[#D4AF37] px-5 py-2.5 transition duration-300">
+                    Order Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== VIEW 1: HOME PAGE ==================== -->
+    <div id="view-home" class="page-view">
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center justify-center bg-cover bg-center pt-20" style="background-image: linear-gradient(to bottom, rgba(17,17,17,0.6), #111111), url('https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&q=80&w=1600');">
+            <div class="max-w-4xl mx-auto px-6 text-center z-10">
+                <span class="text-[#D4AF37] uppercase tracking-widest text-xs font-semibold mb-4 block">Artisanal Micro-Roastery</span>
+                <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-light text-white tracking-tight leading-none mb-6">
+                    We are the ones who<br><span class="italic font-normal text-[#D4AF37]">have the original coffee.</span>
+                </h1>
+                <p class="text-gray-400 text-base sm:text-lg max-w-xl mx-auto mb-10 font-light leading-relaxed">
+                    Experience specialty-grade coffee beans curated for the modern ritual. Roasted in small batches and delivered fresh to your door.
+                </p>
+                <a href="#" onclick="navigatePage('order')" class="inline-block bg-transparent border border-[#D4AF37] text-[#D4AF37] px-8 py-4 text-sm font-semibold uppercase tracking-widest hover:bg-[#D4AF37] hover:text-black transition-all duration-300">
+                    Explore Coffee Collection
+                </a>
+            </div>
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-500 animate-bounce text-sm uppercase tracking-widest hidden sm:block">
+                Scroll ↓
+            </div>
+        </section>
+
+        <!-- Value Propositions / Sensory Hook -->
+        <section class="bg-[#161616] py-24 border-t border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+                    <!-- Prop 1 -->
+                    <div class="space-y-4">
+                        <div class="text-[#D4AF37] font-serif text-2xl">01/</div>
+                        <h3 class="text-lg font-medium text-white tracking-wide">Single-Origin Precision</h3>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            Sourced transparently from high-altitude estates globally, ensuring distinct seasonal flavors and direct-trade integrity.
+                        </p>
+                    </div>
+                    <!-- Prop 2 -->
+                    <div class="space-y-4">
+                        <div class="text-[#D4AF37] font-serif text-2xl">02/</div>
+                        <h3 class="text-lg font-medium text-white tracking-wide">Micro-Batch Roasting</h3>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            We roast in strict, small volumes to monitor chemical transitions precisely, unlocking hidden notes of citrus, chocolate, and spice.
+                        </p>
+                    </div>
+                    <!-- Prop 3 -->
+                    <div class="space-y-4">
+                        <div class="text-[#D4AF37] font-serif text-2xl">03/</div>
+                        <h3 class="text-lg font-medium text-white tracking-wide">Freshness Lock</h3>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            Packed in gas-valve bags within minutes of roasting and shipped immediately, preserving structural volatile compounds.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Freshness Journey (How It Works) -->
+        <section class="py-24 bg-[#111111] border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-[#D4AF37] uppercase tracking-widest text-xs font-semibold mb-3 block">From Farm To Kitchen</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-white font-light tracking-tight">How Freshness Arrives</h2>
+                    <p class="text-gray-400 text-sm font-light mt-4">Most store-bought coffee sits on shelves for months losing its natural oil profile. Here is our fresh cycle:</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <!-- Step 1 -->
+                    <div class="bg-[#161616] p-8 border border-white/5 relative">
+                        <span class="absolute top-4 right-6 text-4xl font-serif text-white/5 font-bold">1</span>
+                        <h3 class="text-lg font-medium text-white mb-3">Custom Roast Order</h3>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            You select your beans and size through our portal. We never pre-bag or stock stale coffee. Your order goes onto our custom small-batch roast list.
+                        </p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="bg-[#161616] p-8 border border-white/5 relative">
+                        <span class="absolute top-4 right-6 text-4xl font-serif text-white/5 font-bold">2</span>
+                        <h3 class="text-lg font-medium text-white mb-3">Freshly Sealed</h3>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            Within hours of cooling, we bag your coffee in specialized, high-grade valve bags. This keeps out damaging oxygen while allowing the beans to rest safely.
+                        </p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="bg-[#161616] p-8 border border-white/5 relative">
+                        <span class="absolute top-4 right-6 text-4xl font-serif text-white/5 font-bold">3</span>
+                        <h3 class="text-lg font-medium text-white mb-3">Rapid Home Delivery</h3>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            Shipped directly to your doorstep. When you open your package, you are brewing coffee at its peak sweet and aromatic flavor profile.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- High-Impact Gateway Link Section -->
+        <section id="portal" class="py-32 bg-[#111111] relative overflow-hidden">
+            <div class="max-w-5xl mx-auto px-6 text-center">
+                <span class="text-[#D4AF37] uppercase tracking-[0.25em] text-xs font-semibold mb-6 block"> The Selection Portal </span>
+                <a href="#" onclick="navigatePage('order')" class="group inline-block focus:outline-none">
+                    <h2 class="font-serif text-4xl sm:text-6xl md:text-7xl text-white font-light tracking-tight leading-none mb-8 transition-colors duration-300 group-hover:text-[#D4AF37]">
+                        Our Curated <br class="sm:hidden"> 
+                        <span class="italic font-normal text-[#D4AF37] group-hover:text-white transition-colors duration-300">Coffee Profiles</span>
+                    </h2>
+                    <div class="max-w-xl mx-auto mb-10">
+                        <p class="text-gray-400 text-base sm:text-lg font-light leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                            Tap here to enter our dedicated marketplace. Customize your preferred origin terroir, select exact package weight (Grams), choose your grind style, and place your order.
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center gap-3 border border-[#D4AF37] px-8 py-4 text-xs font-semibold uppercase tracking-widest text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-black transition-all duration-300">
+                        Go To Ordering Page <span class="inline-block transform transition-transform duration-300 group-hover:translate-x-2">→</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Taste Profile Assistant (Which is right for me?) -->
+        <section class="py-24 bg-[#161616] border-t border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-[#D4AF37] uppercase tracking-widest text-xs font-semibold mb-3 block">Simple Choice Helper</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-white font-light tracking-tight">Find Your Ideal Match</h2>
+                    <p class="text-gray-400 text-sm font-light mt-4">Unsure what coffee fits your morning ritual? Find your drinking style below:</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Match 1 -->
+                    <div class="p-8 border border-white/5 bg-[#111] hover:border-[#D4AF37]/30 transition duration-300">
+                        <span class="text-xs uppercase tracking-wider text-[#D4AF37] block mb-2 font-semibold">I Drink It Black</span>
+                        <h3 class="text-xl font-serif text-white font-light mb-4">Choose: Light Roast</h3>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            Best for drip coffee or pour-overs. It is light, fruity, and natural-tasting, meaning you do not need sugar or milk to enjoy it.
+                        </p>
+                    </div>
+                    <!-- Match 2 -->
+                    <div class="p-8 border border-white/5 bg-[#111] hover:border-[#D4AF37]/30 transition duration-300">
+                        <span class="text-xs uppercase tracking-wider text-[#D4AF37] block mb-2 font-semibold">I Add Milk & Cream</span>
+                        <h3 class="text-xl font-serif text-white font-light mb-4">Choose: Medium Roast</h3>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            Offers a smooth, rich body with chocolate notes that blend beautifully with dairy or oat milk without tasting overly bitter.
+                        </p>
+                    </div>
+                    <!-- Match 3 -->
+                    <div class="p-8 border border-white/5 bg-[#111] hover:border-[#D4AF37]/30 transition duration-300">
+                        <span class="text-xs uppercase tracking-wider text-[#D4AF37] block mb-2 font-semibold">I Love Bold Espresso</span>
+                        <h3 class="text-xl font-serif text-white font-light mb-4">Choose: Dark Roast</h3>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            A deep, intense flavor with low acidity. Perfect for strong automatic espresso machines, French press, or moka pots.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section class="bg-[#0B0B0B] border-t border-white/5 py-24">
+            <div class="max-w-xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="font-serif text-3xl sm:text-4xl text-white font-light mb-4">Contact Us</h2>
+                    <p class="text-gray-400 text-sm font-light max-w-md mx-auto">
+                        Have questions about our roasts, sourcing, or custom partnerships? Leave your details below and we will get back to you shortly.
+                    </p>
+                </div>
+                <!-- Contact Form -->
+                <form class="space-y-6" onsubmit="event.preventDefault();">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2 font-medium">Your Name</label>
+                        <input type="text" required placeholder="John Doe" class="w-full bg-[#111] text-white border border-white/10 px-4 py-3.5 text-sm focus:border-[#D4AF37] outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2 font-medium">Phone Number</label>
+                        <input type="tel" required placeholder="+251-910-710918" class="w-full bg-[#111] text-white border border-white/10 px-4 py-3.5 text-sm focus:border-[#D4AF37] outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2 font-medium">Your Message / Thoughts</label>
+                        <textarea rows="4" required placeholder="Write your message here..." class="w-full bg-[#111] text-white border border-white/10 px-4 py-3.5 text-sm focus:border-[#D4AF37] outline-none transition resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-[#D4AF37] text-black text-xs uppercase tracking-widest font-semibold py-4 hover:bg-white transition duration-300">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== VIEW 2: ABOUT US PAGE ==================== -->
+    <div id="view-about" class="page-view hidden">
+        <section class="pt-32 pb-24 bg-[#111111]">
+            <div class="max-w-4xl mx-auto px-6 space-y-24">
+                <!-- Section Title Header -->
+                <div class="text-center max-w-xl mx-auto mt-12">
+                    <span class="text-[#D4AF37] uppercase tracking-widest text-xs font-semibold mb-3 block">Behind the Craft</span>
+                    <h1 class="font-serif text-4xl sm:text-5xl text-white font-light tracking-tight">Our Story & Philosophy</h1>
+                    <p class="text-gray-400 text-sm font-light mt-4">Discover the heritage, history, and scientific precision that shape every single batch of Kalid Coffee.</p>
+                </div>
+
+                <!-- Part 1: Company History -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start pt-12">
+                    <div class="md:col-span-4">
+                        <span class="text-[#D4AF37] uppercase tracking-widest text-xs font-semibold mb-2 block">Part One</span>
+                        <h3 class="font-serif text-2xl text-white font-light">The Company Story</h3>
+                    </div>
+                    <div class="md:col-span-8 space-y-6 text-gray-400 text-sm font-light leading-relaxed">
+                        <p>
+                            Kalid Coffee was born out of a simple, uncompromising desire: to rescue coffee from the cold machinery of industrial mass production and return it to its true state as an art form. We believe that coffee shouldn't just be consumed as a generic utility to kickstart a morning—it should be a sensory highlight of your day.
+                        </p>
+                        <p>
+                            Beginning as an ambitious micro-roastery, we dedicated ourselves to tracing the steps of every single batch we roasted. We establish direct-trade relationships with independent farmers who treat their land with respect. This allows us to roast and package at highly precise structural standards, giving our global community of drinkers an authentic taste experience.
+                        </p>
+                    </div>
+                </div>
+
+                <hr class="border-white/5">
+
+                <!-- Part 2: History of Coffee -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+                    <div class="md:col-span-4">
+                        <span class="text-[#D4AF37] uppercase tracking-widest text-xs font-semibold mb-2 block">Part Two</span>
+                        <h3 class="font-serif text-2xl text-white font-light">The Origin of the Bean</h3>
+                    </div>
+                    <div class="md:col-span-8 space-y-6 text-gray-400 text-sm font-light leading-relaxed">
+                        <p class="italic text-lg text-gray-300 font-serif">
+                            "Tracing our heritage back to the ancient highlands of Ethiopia..."
+                        </p>
+                        <p>
+                            Centuries ago, the magical property of the coffee cherry was discovered wild in the forested slopes of East Africa. Legend tells of a goat herder who noticed his herd dancing with boundless energy after grazing on bright red cherries.
+                        </p>
+                        <p>
+                            From those ancient highlands, coffee expanded across oceans, transforming societies, sparking deep intellectual movements, and forming the bedrock of modern community culture. At Kalid Coffee, we honor this incredible origin story by sourcing directly from heritage lands, preserving the rich, ancient spirit of coffee inside every bean we distribute.
+                        </p>
+                    </div>
+                </div>
+
+                <hr class="border-white/5">
+
+                <!-- Part 3: Our Process -->
+                <div class="space-y-12">
+                    <div class="text-center max-w-xl mx-auto">
+                        <span class="text-[#D4AF37] uppercase tracking-widest text-xs font-semibold mb-2 block">Part Three</span>
+                        <h3 class="font-serif text-2xl text-white font-light">The Art of Our Process</h3>
+                    </div>
+                    <div class="space-y-6">
+                        <!-- Step 1 -->
+                        <div class="border border-white/5 bg-[#161616] p-8 flex flex-col sm:flex-row gap-6 items-start">
+                            <div class="text-3xl font-serif text-[#D4AF37] font-semibold sm:w-16">01</div>
+                            <div class="space-y-2">
+                                <h4 class="text-lg font-medium text-white">Strict Green Sourcing</h4>
+                                <p class="text-gray-400 text-sm font-light leading-relaxed">
+                                    We select exclusively specialty-grade green coffee beans scoring above 84 on the SCA scale. Our beans are picked by hand, prioritizing micro-lots with clean, complex flavor signatures.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="border border-white/5 bg-[#161616] p-8 flex flex-col sm:flex-row gap-6 items-start">
+                            <div class="text-3xl font-serif text-[#D4AF37] font-semibold sm:w-16">02</div>
+                            <div class="space-y-2">
+                                <h4 class="text-lg font-medium text-white">Profile-Specific Roasting</h4>
+                                <p class="text-gray-400 text-sm font-light leading-relaxed">
+                                    We map out roast curves dynamically based on atmospheric moisture and green bean density. By controlling heat applications precisely during caramelization, we unlock the hidden notes unique to each origin.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== VIEW 3: ORDER PAGE ==================== -->
+    <div id="view-order" class="page-view hidden">
+        <section class="pt-32 pb-24 min-h-screen">
+            <div class="max-w-7xl mx-auto px-6">
+                <!-- Page Header Title -->
+                <div class="text-center max-w-xl mx-auto mt-12 mb-20">
+                    <span class="text-[#D4AF37] uppercase tracking-widest text-xs font-semibold mb-3 block">Premium Ethiopian Origins</span>
+                    <h1 class="font-serif text-4xl sm:text-5xl text-white font-light tracking-tight">Our Curated Collection</h1>
+                    <p class="text-gray-400 text-sm font-light mt-4">Select your region, choose your package weight, and mark your favorite profiles to construct your perfect daily coffee ritual.</p>
+                </div>
+
+                <!-- Coffee Product Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Product 1: Yirgacheffe -->
+                    <div class="bg-[#161616] border border-white/5 relative group flex flex-col justify-between" id="product-yirgacheffe">
+                        <button onclick="toggleFavorite('star-yirg', 'yirgacheffe')" class="absolute top-4 right-4 z-20 bg-black/60 backdrop-blur-sm p-2 rounded-full hover:scale-110 transition duration-300 focus:outline-none" aria-label="Favorite">
+                            <svg id="star-yirg" class="w-5 h-5 text-gray-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.907c.961 0 1.36 1.25.588 1.81l-3.97 2.883a1 1 0 00-.364 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.971-2.883a1 1 0 00-1.18 0l-3.97 2.883c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.364-1.118L2.98 10.1c-.773-.56-.375-1.81.587-1.81h4.907a1 1 0 00.95-.69l1.519-4.674z" />
+                            </svg>
+                        </button>
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=600" alt="Yirgacheffe Roasted Beans" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#161616] to-transparent"></div>
+                        </div>
+                        <div class="p-6 pt-0 space-y-4 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[#D4AF37] text-xs font-semibold uppercase tracking-widest block mb-1">Gedeo Zone</span>
+                                <h3 class="font-serif text-2xl text-white font-light">Yirgacheffe</h3>
+                                <p class="text-xs text-gray-400 font-light mt-2 leading-relaxed">
+                                    Globally celebrated for its clean, light-bodied profile. Features exquisite floral aromas of jasmine, black tea, and hints of sweet citrus.
+                                </p>
+                            </div>
+                            <!-- Weight & Price Selector -->
+                            <div class="pt-4 border-t border-white/5 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-400 font-medium">Package Size:</span>
+                                    <div class="flex space-x-2">
+                                        <button onclick="setWeight('yirgacheffe', 50, 12)" id="btn-yirgacheffe-50" class="text-xs border border-[#D4AF37] bg-[#D4AF37] text-black px-3 py-1 font-semibold transition">50g</button>
+                                        <button onclick="setWeight('yirgacheffe', 100, 20)" id="btn-yirgacheffe-100" class="text-xs border border-white/10 text-gray-400 px-3 py-1 font-semibold hover:border-white transition">100g</button>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-400 font-medium">Price:</span>
+                                    <span id="price-yirgacheffe" class="text-lg font-semibold text-white font-serif">$12.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="addToCart('Yirgacheffe', 'yirgacheffe')" class="w-full bg-[#1e1e1e] group-hover:bg-[#D4AF37] group-hover:text-black py-4 text-xs font-semibold uppercase tracking-widest text-[#D4AF37] border-t border-white/5 transition-all duration-300">
+                            Order This Profile
+                        </button>
+                    </div>
+
+                    <!-- Product 2: Sidamo -->
+                    <div class="bg-[#161616] border border-white/5 relative group flex flex-col justify-between" id="product-sidamo">
+                        <button onclick="toggleFavorite('star-sidamo', 'sidamo')" class="absolute top-4 right-4 z-20 bg-black/60 backdrop-blur-sm p-2 rounded-full hover:scale-110 transition duration-300 focus:outline-none" aria-label="Favorite">
+                            <svg id="star-sidamo" class="w-5 h-5 text-gray-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.907c.961 0 1.36 1.25.588 1.81l-3.97 2.883a1 1 0 00-.364 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.971-2.883a1 1 0 00-1.18 0l-3.97 2.883c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.364-1.118L2.98 10.1c-.773-.56-.375-1.81.587-1.81h4.907a1 1 0 00.95-.69l1.519-4.674z" />
+                            </svg>
+                        </button>
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=600" alt="Sidamo Dark Beans" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#161616] to-transparent"></div>
+                        </div>
+                        <div class="p-6 pt-0 space-y-4 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[#D4AF37] text-xs font-semibold uppercase tracking-widest block mb-1">Sidama Region</span>
+                                <h3 class="font-serif text-2xl text-white font-light">Sidamo</h3>
+                                <p class="text-xs text-gray-400 font-light mt-2 leading-relaxed">
+                                    Exceptionally balanced with a full, velvety body. Presents complex dark berry profiles and a crisp, clean lemon-citrus acidity.
+                                </p>
+                            </div>
+                            <!-- Weight & Price Selector -->
+                            <div class="pt-4 border-t border-white/5 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-400 font-medium">Package Size:</span>
+                                    <div class="flex space-x-2">
+                                        <button onclick="setWeight('sidamo', 50, 11)" id="btn-sidamo-50" class="text-xs border border-[#D4AF37] bg-[#D4AF37] text-black px-3 py-1 font-semibold transition">50g</button>
+                                        <button onclick="setWeight('sidamo', 100, 18)" id="btn-sidamo-100" class="text-xs border border-white/10 text-gray-400 px-3 py-1 font-semibold hover:border-white transition">100g</button>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-400 font-medium">Price:</span>
+                                    <span id="price-sidamo" class="text-lg font-semibold text-white font-serif">$11.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="addToCart('Sidamo', 'sidamo')" class="w-full bg-[#1e1e1e] group-hover:bg-[#D4AF37] group-hover:text-black py-4 text-xs font-semibold uppercase tracking-widest text-[#D4AF37] border-t border-white/5 transition-all duration-300">
+                            Order This Profile
+                        </button>
+                    </div>
+
+                    <!-- Product 3: Harrar -->
+                    <div class="bg-[#161616] border border-white/5 relative group flex flex-col justify-between" id="product-harrar">
+                        <button onclick="toggleFavorite('star-harrar', 'harrar')" class="absolute top-4 right-4 z-20 bg-black/60 backdrop-blur-sm p-2 rounded-full hover:scale-110 transition duration-300 focus:outline-none" aria-label="Favorite">
+                            <svg id="star-harrar" class="w-5 h-5 text-gray-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.907c.961 0 1.36 1.25.588 1.81l-3.97 2.883a1 1 0 00-.364 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.971-2.883a1 1 0 00-1.18 0l-3.97 2.883c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.364-1.118L2.98 10.1c-.773-.56-.375-1.81.587-1.81h4.907a1 1 0 00.95-.69l1.519-4.674z" />
+                            </svg>
+                        </button>
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&q=80&w=600" alt="Harrar Green Beans" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#161616] to-transparent"></div>
+                        </div>
+                        <div class="p-6 pt-0 space-y-4 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[#D4AF37] text-xs font-semibold uppercase tracking-widest block mb-1">Eastern Highlands</span>
+                                <h3 class="font-serif text-2xl text-white font-light">Harrar</h3>
+                                <p class="text-xs text-gray-400 font-light mt-2 leading-relaxed">
+                                    Bold, heavy-bodied, and dry-processed. It delivers a rustic, fruity wildness featuring deep blueberry, dark chocolate, and spicy wine-like notes.
+                                </p>
+                            </div>
+                            <!-- Weight & Price Selector -->
+                            <div class="pt-4 border-t border-white/5 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-400 font-medium">Package Size:</span>
+                                    <div class="flex space-x-2">
+                                        <button onclick="setWeight('harrar', 50, 13)" id="btn-harrar-50" class="text-xs border border-[#D4AF37] bg-[#D4AF37] text-black px-3 py-1 font-semibold transition">50g</button>
+                                        <button onclick="setWeight('harrar', 100, 22)" id="btn-harrar-100" class="text-xs border border-white/10 text-gray-400 px-3 py-1 font-semibold hover:border-white transition">100g</button>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-400 font-medium">Price:</span>
+                                    <span id="price-harrar" class="text-lg font-semibold text-white font-serif">$13.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="addToCart('Harrar', 'harrar')" class="w-full bg-[#1e1e1e] group-hover:bg-[#D4AF37] group-hover:text-black py-4 text-xs font-semibold uppercase tracking-widest text-[#D4AF37] border-t border-white/5 transition-all duration-300">
+                            Order This Profile
+                        </button>
+                    </div>
+
+                    <!-- Product 4: Keffa -->
+                    <div class="bg-[#161616] border border-white/5 relative group flex flex-col justify-between" id="product-keffa">
+                        <button onclick="toggleFavorite('star-keffa', 'keffa')" class="absolute top-4 right-4 z-20 bg-black/60 backdrop-blur-sm p-2 rounded-full hover:scale-110 transition duration-300 focus:outline-none" aria-label="Favorite">
+                            <svg id="star-keffa" class="w-5 h-5 text-gray-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.907c.961 0 1.36 1.25.588 1.81l-3.97 2.883a1 1 0 00-.364 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.971-2.883a1 1 0 00-1.18 0l-3.97 2.883c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.364-1.118L2.98 10.1c-.773-.56-.375-1.81.587-1.81h4.907a1 1 0 00.95-.69l1.519-4.674z" />
+                            </svg>
+                        </button>
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&q=80&w=600" alt="Keffa Coffee Cherries" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#161616] to-transparent"></div>
+                        </div>
+                        <div class="p-6 pt-0 space-y-4 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[#D4AF37] text-xs font-semibold uppercase tracking-widest block mb-1">Rainforest Origin</span>
+                                <h3 class="font-serif text-2xl text-white font-light">Keffa</h3>
+                                <p class="text-xs text-gray-400 font-light mt-2 leading-relaxed">
+                                    Traced back to coffee's birthplace. Offers a rich forest aroma with heavy layers of dark molasses, spices, and chocolate undertones.
+                                </p>
+                            </div>
+                            <!-- Weight & Price Selector -->
+                            <div class="pt-4 border-t border-white/5 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-400 font-medium">Package Size:</span>
+                                    <div class="flex space-x-2">
+                                        <button onclick="setWeight('keffa', 50, 10)" id="btn-keffa-50" class="text-xs border border-[#D4AF37] bg-[#D4AF37] text-black px-3 py-1 font-semibold transition">50g</button>
+                                        <button onclick="setWeight('keffa', 100, 16)" id="btn-keffa-100" class="text-xs border border-white/10 text-gray-400 px-3 py-1 font-semibold hover:border-white transition">100g</button>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-400 font-medium">Price:</span>
+                                    <span id="price-keffa" class="text-lg font-semibold text-white font-serif">$10.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="addToCart('Keffa', 'keffa')" class="w-full bg-[#1e1e1e] group-hover:bg-[#D4AF37] group-hover:text-black py-4 text-xs font-semibold uppercase tracking-widest text-[#D4AF37] border-t border-white/5 transition-all duration-300">
+                            Order This Profile
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== DYNAMIC CART DRAWER ==================== -->
+    <div id="cart-drawer" class="fixed inset-y-0 right-0 w-full max-w-md bg-[#161616] border-l border-white/5 z-50 transform translate-x-full transition-transform duration-300 shadow-2xl flex flex-col justify-between">
+        <!-- Cart Header -->
+        <div class="p-6 border-b border-white/5 flex items-center justify-between">
+            <h2 class="font-serif text-2xl text-white font-light">Your Selection</h2>
+            <button onclick="toggleCart(false)" class="text-gray-400 hover:text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Scrollable Drawer Container -->
+        <div class="overflow-y-auto flex-grow flex flex-col justify-between">
+            <!-- Items Container -->
+            <div id="cart-items-container" class="p-6 space-y-6">
+                <div id="empty-cart-msg" class="text-center text-gray-500 py-12 text-sm font-light">
+                    Your cart is empty. Choose a profile to start your order.
+                </div>
+            </div>
+
+            <!-- Dynamic Customer Payment Form (Hidden when empty) -->
+            <div id="checkout-form-container" class="hidden p-6 border-t border-white/5 space-y-4 bg-[#121212]">
+                <h3 class="font-serif text-lg text-[#D4AF37] font-medium">Complete Your Order</h3>
+                <!-- Payment Information & Customer Support -->
+                <div class="bg-black/40 border border-[#D4AF37]/20 p-4 rounded text-xs text-gray-400 space-y-2">
+                    <p class="text-white font-medium">How to Pay via Telebirr:</p>
+                    <p>1. Send total amount to Telebirr Wallet: <strong class="text-white">0723812786</strong> or <strong class="text-white">0910710918</strong></p>
+                    <p>2. Take a screenshot of the transaction receipt.</p>
+                    <hr class="border-white/10 my-1">
+                    <p class="text-[11px]">📞 <span class="text-[#D4AF37] font-semibold">Customer Support:</span> 0723812786 / 0910710918</p>
+                </div>
+                <!-- Interactive Form -->
+                <form id="order-submit-form" onsubmit="sendOrderToTelegram(event)" class="space-y-3">
+                    <div>
+                        <label class="block text-[11px] uppercase tracking-wider text-gray-400 mb-1" for="customer-name">Full Name</label>
+                        <input type="text" id="customer-name" required class="w-full bg-black/60 border border-white/10 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4AF37] transition">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] uppercase tracking-wider text-gray-400 mb-1" for="customer-phone">Phone Number</label>
+                        <input type="tel" id="customer-phone" required class="w-full bg-black/60 border border-white/10 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4AF37] transition">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] uppercase tracking-wider text-gray-400 mb-1" for="payment-receipt">Upload Telebirr Screenshot</label>
+                        <input type="file" id="payment-receipt" accept="image/*" required class="w-full bg-black/60 border border-white/10 rounded px-2 py-1 text-xs text-gray-400 file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-[#D4AF37] file:text-black hover:file:bg-white cursor-pointer focus:outline-none">
+                    </div>
+                    <button type="submit" id="submit-order-btn" class="w-full bg-[#D4AF37] text-black text-xs font-semibold uppercase tracking-widest py-4 mt-4 hover:bg-white transition duration-300 disabled:opacity-50">
+                        Submit & Send Order
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Cart Footer -->
+        <div class="p-6 border-t border-white/5 bg-[#111111]">
+            <div class="flex items-center justify-between">
+                <span class="text-sm text-gray-400">Subtotal:</span>
+                <span id="cart-subtotal" class="text-xl font-serif font-semibold text-white">$0.00</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dark Overlay Behind Drawer -->
+    <div id="cart-overlay" onclick="toggleCart(false)" class="fixed inset-0 bg-black/60 z-30 hidden transition-opacity duration-300"></div>
+
+    <!-- ==================== UNIFIED GLOBAL FOOTER ==================== -->
+    <footer class="bg-[#080808] border-t border-white/5 py-12 text-center">
+        <div class="max-w-4xl mx-auto px-6 space-y-8">
+            <!-- Social Media Connections -->
+            <div class="flex items-center justify-center space-x-8">
+                <a href="https://instagram.com/kalidcoffee" target="_blank" class="text-xs uppercase tracking-widest text-gray-400 hover:text-[#D4AF37] transition duration-300">
+                    Instagram
+                </a>
+                <span class="text-white/10">•</span>
+                <a href="https://facebook.com/kalidcoffee" target="_blank" class="text-xs uppercase tracking-widest text-gray-400 hover:text-[#D4AF37] transition duration-300">
+                    Facebook
+                </a>
+                <span class="text-white/10">•</span>
+                <a href="https://x.com/kalidcoffee" target="_blank" class="text-xs uppercase tracking-widest text-gray-400 hover:text-[#D4AF37] transition duration-300">
+                    X / Twitter
+                </a>
+            </div>
+            <!-- Copyright -->
+            <div class="text-[10px] text-gray-600 tracking-widest uppercase">
+                &copy; 2026 KALID COFFEE. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== CORE INTERACTIVE SCRIPTS ==================== -->
+    <script>
+        // 1. SPA ROUTER FUNCTION
+        function navigatePage(pageId) {
+            // Hide all active views
+            const pages = document.querySelectorAll('.page-view');
+            pages.forEach(page => page.classList.add('hidden'));
+
+            // Display the requested view
+            const targetPage = document.getElementById('view-' + pageId);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+            }
+
+            // Always scroll to the top of the viewport when changing pages
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 2. STATE MANAGEMENT FOR CART & PRODUCTS
+        const TELEGRAM_BOT_TOKEN = '8826460457:AAE37bVHie_g2vFNEc3gLhP85auFr3I5nJc';
+        const TELEGRAM_CHAT_ID = '-1004488969676';
+
+        const productStates = {
+            yirgacheffe: { weight: 50, price: 12 },
+            sidamo: { weight: 50, price: 11 },
+            harrar: { weight: 50, price: 13 },
+            keffa: { weight: 50, price: 10 }
+        };
+
+        let cart = [];
+
+        // ON INITIAL LOAD
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeFavorites();
+            updateCartUI();
+        });
+
+        // 3. FAVORITES PERSISTENCE (LocalStorage)
+        function toggleFavorite(starId, regionKey) {
+            const star = document.getElementById(starId);
+            if(!star) return;
+            
+            let favorites = JSON.parse(localStorage.getItem('kalid_favorites')) || [];
+
+            if (star.getAttribute('fill') === 'none') {
+                star.setAttribute('fill', '#D4AF37');
+                star.setAttribute('stroke', '#D4AF37');
+                star.classList.remove('text-gray-400');
+                star.classList.add('text-[#D4AF37]');
+                if (!favorites.includes(regionKey)) {
+                    favorites.push(regionKey);
+                }
+            } else {
+                star.setAttribute('fill', 'none');
+                star.setAttribute('stroke', 'currentColor');
+                star.classList.remove('text-[#D4AF37]');
+                star.classList.add('text-gray-400');
+                favorites = favorites.filter(item => item !== regionKey);
+            }
+            localStorage.setItem('kalid_favorites', JSON.stringify(favorites));
+        }
+
+        function initializeFavorites() {
+            const favorites = JSON.parse(localStorage.getItem('kalid_favorites')) || [];
+            const regionStars = {
+                yirgacheffe: 'star-yirg',
+                sidamo: 'star-sidamo',
+                harrar: 'star-harrar',
+                keffa: 'star-keffa'
+            };
+
+            Object.keys(regionStars).forEach(key => {
+                const starElement = document.getElementById(regionStars[key]);
+                if (starElement) {
+                    if (favorites.includes(key)) {
+                        starElement.setAttribute('fill', '#D4AF37');
+                        starElement.setAttribute('stroke', '#D4AF37');
+                        starElement.classList.remove('text-gray-400');
+                        starElement.classList.add('text-[#D4AF37]');
+                    } else {
+                        starElement.setAttribute('fill', 'none');
+                        starElement.setAttribute('stroke', 'currentColor');
+                        starElement.classList.remove('text-[#D4AF37]');
+                        starElement.classList.add('text-gray-400');
+                    }
+                }
+            });
+        }
+
+        // 4. PRICE & WEIGHT MODIFIERS
+        function setWeight(product, weight, price) {
+            productStates[product].weight = weight;
+            productStates[product].price = price;
+
+            const priceEl = document.getElementById('price-' + product);
+            if(priceEl) {
+                priceEl.innerText = '$' + price.toFixed(2);
+            }
+
+            const btn50 = document.getElementById('btn-' + product + '-50');
+            const btn100 = document.getElementById('btn-' + product + '-100');
+
+            if(btn50 && btn100) {
+                if (weight === 50) {
+                    btn50.className = "text-xs border border-[#D4AF37] bg-[#D4AF37] text-black px-3 py-1 font-semibold transition";
+                    btn100.className = "text-xs border border-white/10 text-gray-400 px-3 py-1 font-semibold hover:border-white transition";
+                } else {
+                    btn100.className = "text-xs border border-[#D4AF37] bg-[#D4AF37] text-black px-3 py-1 font-semibold transition";
+                    btn50.className = "text-xs border border-white/10 text-gray-400 px-3 py-1 font-semibold hover:border-white transition";
+                }
+            }
+        }
+
+        // 5. DRAWER INTERACTIVE CONTROLS
+        function toggleCart(isOpen) {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('cart-overlay');
+            if(drawer && overlay) {
+                if (isOpen) {
+                    drawer.classList.remove('translate-x-full');
+                    overlay.classList.remove('hidden');
+                } else {
+                    drawer.classList.add('translate-x-full');
+                    overlay.classList.add('hidden');
+                }
+            }
+        }
+
+        // 6. CART CORE ACTIONS
+        function addToCart(displayName, productKey) {
+            const state = productStates[productKey];
+            const existingIndex = cart.findIndex(item => item.name === displayName && item.weight === state.weight);
+
+            if (existingIndex > -1) {
+                cart[existingIndex].qty += 1;
+            } else {
+                cart.push({ name: displayName, weight: state.weight, price: state.price, qty: 1 });
+            }
+            updateCartUI();
+            toggleCart(true);
+        }
+
+        // Increase quantity of cart items
+        function increaseQty(index) {
+            cart[index].qty += 1;
+            updateCartUI();
+        }
+
+        // Decrease quantity of cart items
+        function decreaseQty(index) {
+            if (cart[index].qty > 1) {
+                cart[index].qty -= 1;
+            } else {
+                cart.splice(index, 1);
+            }
+            updateCartUI();
+        }
+
+        // Remove item entirely from cart
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        // 7. CART UI RENDER ENGINE
+        function updateCartUI() {
+            const container = document.getElementById('cart-items-container');
+            const subtotalEl = document.getElementById('cart-subtotal');
+            const badge = document.getElementById('cart-count-badge');
+            const formContainer = document.getElementById('checkout-form-container');
+
+            if(!container || !subtotalEl || !badge || !formContainer) return;
+
+            container.innerHTML = '';
+            let total = 0;
+            let totalQty = 0;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div id="empty-cart-msg" class="text-center text-gray-500 py-12 text-sm font-light">
+                        Your cart is empty. Choose a profile to start your order.
+                    </div>
+                `;
+                badge.classList.add('hidden');
+                formContainer.classList.add('hidden');
+            } else {
+                badge.classList.remove('hidden');
+                formContainer.classList.remove('hidden');
+
+                cart.forEach((item, index) => {
+                    const itemTotal = item.price * item.qty;
+                    total += itemTotal;
+                    totalQty += item.qty;
+
+                    const itemHtml = `
+                        <div class="flex justify-between items-center border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="font-serif text-lg text-white font-light">${item.name}</h4>
+                                <p class="text-xs text-gray-400 font-light mt-1">Size: ${item.weight}g</p>
+                                <!-- Inline Quantity Controllers -->
+                                <div class="flex items-center space-x-2 mt-3 bg-black/40 border border-white/10 rounded w-max p-1">
+                                    <button onclick="decreaseQty(${index})" class="w-6 h-6 flex items-center justify-center text-[#D4AF37] hover:bg-white/5 rounded text-sm font-bold focus:outline-none" aria-label="Decrease qty"> - </button>
+                                    <span class="text-xs font-semibold text-white px-2">${item.qty}</span>
+                                    <button onclick="increaseQty(${index})" class="w-6 h-6 flex items-center justify-center text-[#D4AF37] hover:bg-white/5 rounded text-sm font-bold focus:outline-none" aria-label="Increase qty"> + </button>
+                                </div>
+                            </div>
+                            <div class="text-right space-y-2">
+                                <p class="text-sm font-medium text-white font-serif">$${itemTotal.toFixed(2)}</p>
+                                <button onclick="removeFromCart(${index})" class="text-[10px] text-red-400/70 hover:text-red-400 uppercase tracking-wider font-semibold focus:outline-none">Remove</button>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += itemHtml;
+                });
+            }
+
+            subtotalEl.innerText = '$' + total.toFixed(2);
+            badge.innerText = totalQty;
+        }
+
+        // 8. TELEGRAM BOT INTEGRATION
+        async function sendOrderToTelegram(event) {
+            event.preventDefault();
+            const submitBtn = document.getElementById('submit-order-btn');
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Processing...";
+
+            const customerName = document.getElementById('customer-name').value;
+            const customerPhone = document.getElementById('customer-phone').value;
+            const receiptFileInput = document.getElementById('payment-receipt');
+
+            if (!receiptFileInput.files || receiptFileInput.files.length === 0) {
+                alert("Please upload your Telebirr screenshot receipt.");
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalBtnText;
+                return;
+            }
+
+            const receiptFile = receiptFileInput.files[0];
+            const orderId = 'KB-' + Math.floor(1000 + Math.random() * 9000);
+
+            // Structure Dynamic Message Block
+            let orderItemsText = "";
+            let grandTotal = 0;
+
+            cart.forEach(item => {
+                const itemTotal = item.price * item.qty;
+                grandTotal += itemTotal;
+                orderItemsText += `• ${item.name} (${item.weight}g) x ${item.qty} - $${itemTotal.toFixed(2)}\n`;
+            });
+
+            const captionText = `🔔 NEW ORDER RECEIVED!\n\n📝 ORDER INFO\n• Order ID: ${orderId}\n• Status: Paid via Telebirr (Receipt Attached)\n\n👤 CUSTOMER DETAILS\n• Name: ${customerName}\n• Phone: ${customerPhone}\n\n☕ ITEMS ORDERED\n${orderItemsText}\n💰 TOTAL PAID: $${grandTotal.toFixed(2)}`;
+
+            const formData = new FormData();
+            formData.append('chat_id', TELEGRAM_CHAT_ID);
+            formData.append('photo', receiptFile);
+            formData.append('caption', captionText);
+
+            try {
+                const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto`, {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+
+                if (result.ok) {
+                    alert("Thank you! Your order and payment screenshot have been submitted successfully. Our office will prepare your coffee shortly!");
+                    cart = [];
+                    document.getElementById('order-submit-form').reset();
+                    updateCartUI();
+                    toggleCart(false);
+                } else {
+                    console.error("Telegram API Error:", result);
+                    alert("Something went wrong with the submission. Please check your Telegram credentials or connection.");
+                }
+            } catch (error) {
+                console.error("Network Error:", error);
+                alert("Could not connect to server. Please try again.");
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalBtnText;
+            }
+        }
+    </script>
+</body>
+</html>
+/html>
